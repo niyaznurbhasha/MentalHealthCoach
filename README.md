@@ -48,7 +48,7 @@ those potential next steps later in this report.
 
 ### Dataset / Preprocessing / Exploration 
 
-I selected the EmpatheticDialogues dataset (https://huggingface.co/datasets/Estwld/empathetic_dialogues_llm_ for finetuning. There were several good options available on HF to train this model, but I decided to go with this one because it is reputable, has clean conversational text, rich emotional context, larger than others (25K Conversations), and easy to preprocess into input to target pairs. 
+I selected the EmpatheticDialogues dataset (https://huggingface.co/datasets/Estwld/empathetic_dialogues_llm) for finetuning. There were several good options available on HF to train this model, but I decided to go with this one because it is reputable, has clean conversational text, rich emotional context, larger than others (25K Conversations), and easy to preprocess into input to target pairs. 
 
 Another reason I selected it was the people curating the dataset had already restructured and cleaned the data for LLM training and inference i.e. Replaced instances of '_comma_' with ',' for improved readability.
 
@@ -57,11 +57,9 @@ I did still do some basic data cleaning like removing extra white space and line
 ### Finetuning Model
 I used google's flan-t5-small model to finetune because its lightweight, fast to finetune, strong at instruction following, and ideal for short form generation tasks. I engineered a specific instruction prefix to frame the model as a supportive friend providing both empathy and practical suggestions while avoiding medical advice. I fine-tuned using eval loss rather than generating text during training, which is faster and avoids decode bugs. Standard regularization techniques like label smoothing, gradient clipping, weight decay, and warmup were applied, with a fixed seed to ensure reproducible results.
 
-After training, ROUGE-L is manually computed on 200 validation samples. Note ROUGE-L focuses on actual word overlap wheras semantic similarity is more focused on menaing of the sentences. 
-==================================================
-ROUGE-L: 0.1470 
-Semantic Similarity: 0.2539
-==================================================
+### After training, ROUGE-L is manually computed on 200 validation samples. Note ROUGE-L focuses on actual word overlap whereas semantic similarity is more focused on meaning of the sentences. 
+### ROUGE-L: 0.1470 
+### Semantic Similarity: 0.2539
 
 ## Example Inputs/ Outputs 
 
