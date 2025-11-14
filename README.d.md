@@ -18,6 +18,22 @@ streamlit run app.py
 - Visualize model results with Histograms of ROUGE-L and semantic similarity metrics
 - Chat with the model with multi-turn context to see if its effectiveness in mental health coaching in real time
 
+### Model Weights
+The fine-tuned model weights are stored on Hugging Face due to GitHub's file size limits.
+
+You can download the weights from the following link and then place them in a models directory inside this folder directory. 
+
+https://huggingface.co/yazpasha/mentalhealthcoach
+
+This includes:
+- `model.safetensors`
+- `config.json`
+- `generation_config.json`
+- `tokenizer.json`
+- `tokenizer_config.json`
+- `special_tokens_map.json`
+- `training_args.bin` (optional metadata)
+
 # Motivation
 
 I've always been passionate about mental health. With the explosion of llm's, many people have been turning to ChatGPT to use as a therapist, but recent lawsuits
