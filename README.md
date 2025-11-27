@@ -1,4 +1,4 @@
-Finetuning LLM for Mental Health Support 
+# Finetuning LLM for Mental Health Support 
 
 ## Setup
 
@@ -88,6 +88,7 @@ Longer training - Train for 10-15 epochs instead of 3
 Larger model - Use flan-t5-base (220M params) or flan-t5-large (770M) instead of small (60M)
 Better prompt engineering - Experiment with different instruction prefixes and few-shot examples in the prompt
 Crisis Detection - For significant health crises, need to operate differently, i.e. don't encourage significant action like ChatGPT, potentially reach out to family, etc. 
+
 
 
 
